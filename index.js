@@ -32,8 +32,7 @@ function loadTeams() {
         //console.info(r);
      //   return r.json();
       //}) 
-      
-      .then( (teams) => {
+    .then( (teams) => {
         console.warn("teams",teams);
         displayTeams(teams);
       });
