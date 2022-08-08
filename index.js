@@ -22,7 +22,7 @@ function displayTeams(teams) {
 
 //afisare
 //console.info(teamsHTML);
-document.querySelector("table tbody").innerHTML = teamsHTML;
+//document.querySelector("table tbody").innerHTML = teamsHTML;
 
 function loadTeams() {
     fetch("data/teams.json")
