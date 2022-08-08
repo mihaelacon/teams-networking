@@ -35,13 +35,24 @@ function loadTeams() {
       });
 }
 
+function $(selector) {
+  return document.querySelector(selector)
+}
+}
+
+
+function leu(selector){
+  return document.querySelector(selector)
+}
+
 function submitForm(e) {
   console.warn("submit",e);
   e.preventDefault();
   //nu mai face ce ar fi facut implicit -opreste formularul sa faca submit sa incarce pagina
-  var promotion = document.querySelector('input[name=promotion]').value;
-  var members = document.querySelector('input[name=members]').value;
-  var name = document.querySelector('input[name=name]').value;
+  //var promotion = document.querySelector('input[name=promotion]').value;
+  var promotion = leu('input[name=promotion]').value;
+  var members = leu('input[name=members]').value;
+  var name = $('input[name=name]').value;
   var url = document.querySelector('input[name=url]').value;
 
 
