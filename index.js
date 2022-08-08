@@ -27,14 +27,20 @@ function displayTeams(teams) {
 
 function loadTeams() {
     fetch("data/teams.json")
-      .then(function (r) {
+    .then((r) => r.json())
+     // .then(function (r) {
         //console.info(r);
-        return r.json();
-      })  
-      .then(function (teams) {
-        //console.warn("teams",teams);
+     //   return r.json();
+      //}) 
+      
+      .then( (teams) => {
+        console.warn("teams",teams);
         displayTeams(teams);
       });
+      //.then(function (teams) {
+        //console.warn("teams",teams);
+       // displayTeams(teams);
+      //});
 }
 
 function $(selector) {
