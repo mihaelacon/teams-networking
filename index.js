@@ -4,6 +4,8 @@ function displayTeams(teams) {
     var teamsHTML = "";
     teams.forEach(function (team) {
       //console.info(team.promotion);
+      //const teamsHTML = teams.map(getTeamsHTML);nu e ca la mine
+      //teamnHTML = [] - eroare la afisare
         teamsHTML += ` 
            <tr>
                 <td>${team.promotion}</td>
@@ -70,7 +72,7 @@ function submitForm(e) {
 }
 
 function initEvents() {
-  var form = document.getElementById("editForm");
+  const form = document.getElementById("editForm");
   console.warn("form",form)
   console.info(form);
   form.addEventListener("submit", submitForm)
