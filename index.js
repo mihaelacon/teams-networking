@@ -22,7 +22,6 @@ function displayTeams(teams) {
 
 //afisare
 //console.info(teamsHTML);
-//document.querySelector("table tbody").innerHTML = teamsHTML;
 
 function loadTeams() {
     fetch("data/teams.json")
@@ -36,4 +35,36 @@ function loadTeams() {
       });
 }
 
+function submitForm(e) {
+  console.warn("submit",e);
+  e.preventDefault();
+  //nu mai face ce ar fi facut implicit -opreste formularul sa faca submit sa incarce pagina
+  var promotion = document.querySelector('input[name=promotion]').value;
+  var members = document.querySelector('input[name=members]').value;
+  var name = document.querySelector('input[name=name]').value;
+  var url = document.querySelector('input[name=url]').value;
+
+
+  var team = {
+    promotion: promotion, 
+    members: members,
+    name: name,
+    url: url,
+    //aici virgula poate sa fie sau sa nu fie; in json la ultima nu se pune virgula
+  }
+
+  console.warn("submit", JSON.stringify(team)); //submit {"promotion":"A","members":"B","name":"C","url":"D"}
+  console.warn("submit", promotion, members, name, url);
+  console.warn(team); //{promotion: 'A', members: 'B', name: 'C', url: 'D'}
+}
+
+function initEvents() {
+  var form = document.getElementById("editForm");
+  console.warn("form",form)
+  console.info(form);
+  form.addEventListener("submit", submitForm)
+  //cand face submit se executa functia submitForm
+}
+
 loadTeams();
+initEvents();
